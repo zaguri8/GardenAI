@@ -1,6 +1,4 @@
-# Full Stack Application with FastAPI and React
-
-This project combines a powerful FastAPI backend with a sleek React frontend, leveraging TailwindCSS for styling. Dive into the world of modern web development with a machine learning twist, thanks to an integrated Keras model. Follow the steps below to get started!
+# Plant Health Monitor
 
 ## Getting Started
 
