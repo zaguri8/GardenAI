@@ -1,5 +1,7 @@
 
-# How   to use
+# React frontend with tailwindcss
+
+# How  to use
 ## Setup
 ```bash
 npm install

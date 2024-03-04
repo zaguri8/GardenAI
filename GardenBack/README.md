@@ -1,5 +1,5 @@
 
-# Garden AI fastAPI backend with keras model
+# FastAPI backend with keras ml
 
 # How to use
 
