@@ -32,9 +32,7 @@ class HealthAssement:
             )
 
         prediction = my_model.predict(self.image)
-        predicted_class = 1 if prediction > 0.5 else 0
-
-        return Healthy() if predicted_class > 0.5 else NeedsWater()
+        return Healthy() if prediction > 0.5 else NeedsWater()
 
     def load_plant_image(self, path: str):
         img = image.load_img(path, target_size=(256, 256))
