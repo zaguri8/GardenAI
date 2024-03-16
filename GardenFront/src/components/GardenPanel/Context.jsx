@@ -10,6 +10,7 @@ const WithGardenerContext = (Component) => {
             needsWater: null,
             temperature: null
         })
+
         const isUninitialized = () => (gardenState.needsWater === null && gardenState.temperature === null)
         const withStateCopy = (newState) => {
             return { ...gardenState, ...newState }
@@ -25,6 +26,7 @@ const WithGardenerContext = (Component) => {
                 temperature: null
             })
         }
+        
         const classify = async (file) => {
             setClassifying(true)
             try {
@@ -43,6 +45,7 @@ const WithGardenerContext = (Component) => {
             } catch (e) { console.error(e) }
             setClassifying(false)
         }
+
         return <GardenerContext.Provider value={{
             gardenState, classifying, image,
             classify, resetState, isUninitialized, setClassifying, setImage

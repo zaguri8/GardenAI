@@ -30,10 +30,11 @@ function Navbar() {
         }}>
             <div onClick={(e) => {
                 e.stopPropagation()
-
             }} id="menu-authbox" style={{boxShadow:'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px'}} className={`absolute overflow-hidden w-full flex flex-col items-center h-max rounded-br-xl rounded-bl-xl border-[1px] translate-y-[45px] bg-[white]%]${!showingMenu ? ' hidden' : ''}`}>
-                {/* <div className=" p-2 hover:bg-[lightgray] bg-white transition-all w-full text-center">Model improvement</div>
-                <div className=" p-2 hover:bg-[lightgray]  bg-white  transition-all w-full text-center">Profile</div> */}
+                {user?.isAdmin && 
+                
+                <div onClick={() => nav("/model-improvement")} className=" p-2 hover:bg-[lightgray] bg-white transition-all w-full text-center">Model improvement</div>}
+                <div className=" p-2 hover:bg-[lightgray]  bg-white  transition-all w-full text-center">Profile</div>
                 <div className=" p-2 hover:bg-[lightgray]  bg-white  transition-all w-full text-center" onClick={() => {
                     logout()
                     toast("Logged out! See you next time")

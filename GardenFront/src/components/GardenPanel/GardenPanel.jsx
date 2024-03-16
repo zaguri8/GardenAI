@@ -12,6 +12,7 @@ function GardenPanel() {
     </div>
 }
 
+
 export default WithGardenerContext(
     GardenPanel
 );

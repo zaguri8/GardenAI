@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar/Navbar"
 import Spinner from "./components/Spinner/Spinner"
 import { ToastContainer } from 'react-toastify';
 import Profile from "./pages/Profile"
+import ModelImprovement from "./pages/ModelImprovement"
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
     <div className="p-2">
       <Routes>
         <Route index element={<Profile />} />
+        <Route path="/model-improvement" element={<ModelImprovement />} />
         <Route path="/auth" element={<AuthLayout />}>
           <Route path="login" element={<LoginPage />} />
           <Route path="register" element={<RegisterPage />} />

@@ -50,7 +50,6 @@ function ImageClassification() {
     return <div className="min-w-[200px] grid place-items-center">
         <Image />
         <div>
-
             <Modes />
         </div>
 
