@@ -8,6 +8,8 @@ import Spinner from "./components/Spinner/Spinner"
 import { ToastContainer } from 'react-toastify';
 import Profile from "./pages/Profile"
 import ModelImprovement from "./pages/ModelImprovement"
+import About from "./pages/about/About"
+import Queries from "./pages/Queries"
 
 function App() {
 
@@ -17,7 +19,9 @@ function App() {
     <div className="p-2">
       <Routes>
         <Route index element={<Profile />} />
+        <Route path="/about" element={<About />} />
         <Route path="/model-improvement" element={<ModelImprovement />} />
+        <Route path="/queries" element={<Queries />} />
         <Route path="/auth" element={<AuthLayout />}>
           <Route path="login" element={<LoginPage />} />
           <Route path="register" element={<RegisterPage />} />

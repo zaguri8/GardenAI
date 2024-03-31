@@ -1,11 +1,13 @@
 import { useCallback } from "react";
 import { useGardener } from "./Context";
 import placeholder from '../../flower.png'
+import { useAuth } from "../../context/AuthContext";
 
 
 function ImageClassification() {
 
     const { image, classifying, gardenState, isUninitialized } = useGardener()
+    const { user } = useAuth()
 
     const Modes = useCallback(() => {
         if (classifying) {
@@ -23,22 +25,46 @@ function ImageClassification() {
             </div>
         }
 
-        return <div className="text-center">
-            <div>
-                Level of water
+        return <div className="text-center" style={{
+            display:'grid',
+            gridTemplateColumns: user ? '1fr 1fr' : '1fr',
+            gap: '1rem'
+        }}>
+            <div className="border-[1px] border-[lightgray] px-2 py-4 rounded-md">
+
+                <div className="font-bold">
+                    Level of water:
+                </div>
+                <div>
+                    <span className={gardenState.needsWater ? "font-bold text-[#bd3333]" : ''}> LOW </span>
+                    ||
+                    <span className={!gardenState.needsWater ? 'font-bold text-[green]' : ''}> NORMAL </span>
+                </div>
+                <span>
+                    Reccomendation:<br />
+                    {gardenState.message}
+                    <br />
+                </span>
             </div>
-            <div>
-                <span className={gardenState.needsWater ? "font-bold text-[#bd3333]" : ''}> LOW </span>
-                ||
-                <span className={!gardenState.needsWater ? 'font-bold text-[green]' : ''}> NORMAL </span>
-            </div>
-            <span>
-                Reccomendation:<br />
-                {gardenState.message}
-                <br/>
-            </span>
+
+            {user && <div className="border-[1px] border-[lightgray] px-2 py-4 rounded-md">
+                { /* Change here temperature to match temperature model */}
+                <div className="font-bold">
+                    Temperature:
+                </div>
+                <div>
+                    <span className={gardenState.needsWater ? "font-bold text-[#bd3333]" : ''}> LOW </span>
+                    ||
+                    <span className={!gardenState.needsWater ? 'font-bold text-[green]' : ''}> NORMAL </span>
+                </div>
+                <span>
+                    Reccomendation:<br />
+                    {gardenState.message}
+                    <br />
+                </span>
+            </div>}
         </div>
-    }, [classifying, gardenState, image])
+    }, [classifying, gardenState, image, user])
 
     const Image = useCallback(() => {
         return <div className={`min-h-[100px] overflow-hidden w-fit text-center m-8 rounded-md ${image ? 'border-[1px]' : ''}`}>

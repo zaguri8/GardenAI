@@ -10,4 +10,4 @@ function ProfilePage() {
     </div>
 }
 
-export default AuthenticatedGuard(ProfilePage, true);
+export default ProfilePage
